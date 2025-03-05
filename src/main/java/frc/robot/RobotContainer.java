@@ -6,12 +6,17 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.commands.ArcadeDrivecmd;
+import frc.robot.commands.ElevatorJoystickCmd;
+import frc.robot.commands.ElevatorPIDcmd;
 
 
 public class RobotContainer {
   private final DriveTrainSubsystem drivetrainSubsystem = new DriveTrainSubsystem();
+  private final ElevatorSubsystem elevatorsubsystem = new ElevatorSubsystem();
   private final Joystick joystick1 = new Joystick(0);
 
   public RobotContainer() {
@@ -25,8 +30,10 @@ public class RobotContainer {
   private void configureBindings() {}
 
   private void configureButtonBindings() {
-    // Configure your button bindings here
-
+    new JoystickButton(joystick1, 3).whileTrue(new ElevatorPIDcmd(elevatorsubsystem, 1.2));
+    new JoystickButton(joystick1, 4).whileTrue(new ElevatorPIDcmd(elevatorsubsystem, 0));
+    new JoystickButton(joystick1, 1).whileTrue(new ElevatorJoystickCmd(elevatorsubsystem, 0.5));
+    new JoystickButton(joystick1, 2).whileTrue(new ElevatorJoystickCmd(elevatorsubsystem, -0.5));
   }
 
   public Command getAutonomousCommand() {
