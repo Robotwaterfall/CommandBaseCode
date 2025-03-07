@@ -5,15 +5,16 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.DriveTrainconstants;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class DriveTrainSubsystem extends SubsystemBase {
-  private TalonSRX LeftMasterMotor1 = new TalonSRX( 18);
-  private TalonSRX LeftMasterMotor2 = new TalonSRX(3);
-  private TalonSRX RightMasterMotor1 = new TalonSRX(4);
-  private TalonSRX RightMasterMotor2 = new TalonSRX(1);
+  private TalonSRX LeftMasterMotor1 = new TalonSRX(DriveTrainconstants.kLeftMotorPort1);
+  private TalonSRX LeftMasterMotor2 = new TalonSRX(DriveTrainconstants.kLeftMotorPort2);
+  private TalonSRX RightMasterMotor1 = new TalonSRX(DriveTrainconstants.kRightMotorPort1);
+  private TalonSRX RightMasterMotor2 = new TalonSRX(DriveTrainconstants.kRightMotorPort2);
 
   /** Creates a new ExampleSubsystem. */
   public DriveTrainSubsystem() {}

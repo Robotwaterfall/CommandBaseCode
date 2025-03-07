@@ -13,9 +13,33 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  public final static class ElevatorConstants {
-    public static final int kMotorPort = 13; // CAN ID
-    public static final double kEncoderTick2Meter = 1.0/4096.0 * 0.1 * Math.PI; // 1 rotation = 0.1m
-    
+  public final static class Intakeconstants {
+    // Intake Motor Ports
+    public static final int kIntakeMotorPort = 0; //yet to be decieded!
+    //Intake speed
+    public static final double kIntakeSpeedin = 1; // the speed the intake goes in, 100% speed
+    public static final double kIntakeSpeedout = -1; // the speed the intake goes out, 100% speed
+
   }
+  public final class Elevatorconstants {
+  // Elevator Motor Ports
+  public static final int kElevatorMotorPort = 13;
+  
+  // Elevator speed (arcade drive)
+  public static final double kElevatorSpeedup = 0.5; // 0.5 is the speed
+  public static final double kElevatorSpeeddown = -0.5; // -0.5 is the speed
+
+  // Elevator PID Constants 
+  public static final double kElevatorSetpointreturn = 0; // the setpoint for the elevator to return to (0 meters)
+  public static final double kElevatorSetpointgoto = 1.2; // the setpoint for the elevator to go to (1.2 meters)
+  
+}
+  public final class DriveTrainconstants {
+  // DriveTrain Motor Ports
+  public static final int kLeftMotorPort1 = 18;
+  public static final int kLeftMotorPort2 = 3;
+  public static final int kRightMotorPort1 = 4;
+  public static final int kRightMotorPort2 = 1;
+}
+
 }

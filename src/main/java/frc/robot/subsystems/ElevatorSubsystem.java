@@ -8,10 +8,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.Elevatorconstants;
 
 public class ElevatorSubsystem extends SubsystemBase {
 
-  private SparkMax PIDmotor = new SparkMax(13, MotorType.kBrushless);
+  private SparkMax PIDmotor = new SparkMax(Elevatorconstants.kElevatorMotorPort, MotorType.kBrushless);
   private final double kEncoderTick2Meter = 1.0/4096.0 * 0.1 * Math.PI;
 
   public double getEncoderMeters() {
