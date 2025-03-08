@@ -16,7 +16,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
   private TalonSRX RightMasterMotor1 = new TalonSRX(DriveTrainconstants.kRightMotorPort1);
   private TalonSRX RightMasterMotor2 = new TalonSRX(DriveTrainconstants.kRightMotorPort2);
 
-  /** Creates a new ExampleSubsystem. */
+  /** Creates a new DriveTrianSubsystem. */
   public DriveTrainSubsystem() {}
 
   @Override

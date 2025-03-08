@@ -22,7 +22,7 @@ public class ElevatorSubsystem extends SubsystemBase {
     return PIDmotor.getEncoder().getPosition();
   }
 
-  /** Creates a new ArmPIDSubsystem. */
+  /** Creates a new ElevatorPIDSubsystem. */
   public ElevatorSubsystem() {
 
   }
