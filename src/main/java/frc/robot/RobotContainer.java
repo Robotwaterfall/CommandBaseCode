@@ -7,6 +7,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -45,6 +47,13 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
+    new SequentialCommandGroup(
+      new ElevatorPIDcmd(elevatorsubsystem, Elevatorconstants.kElevatorSetpointgoto), //
+
+      new ParallelCommandGroup(
+        new Intakecmd(intakesubsystem, Intakeconstants.kIntakeSpeedin) //
+      )//
+    );
     return null;
   }
 }
